@@ -1,6 +1,6 @@
 import { QueryResult } from "pg"
 import { z } from 'zod'
-import { createUserSchema, returnUserSchema, returnUserSchemaWithoutPassword, allUsersSchema } from "../schemas/users.schemas"
+import { createUserSchema, returnUserSchema, allUsersSchema } from "../schemas/users.schemas"
 
 type IUserRequest = z.infer<typeof createUserSchema>
 

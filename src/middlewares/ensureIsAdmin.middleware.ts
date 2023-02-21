@@ -2,18 +2,6 @@ import { Response, Request, NextFunction } from 'express'
 import { AppError } from '../errors'
 import jwt from 'jsonwebtoken'
 
-// const ensureIsAdminMiddleware = async (req: Request, res: Response, next: NextFunction) => {
-
-//     const authenticatedUser = req.user
-
-//     if(authenticatedUser.admin !== false){
-//         throw new AppError('User do not have permission')
-//     }
-
-//     return next()
-
-// }
-
 const ensureIsAdminMiddleware = async (req: Request, res: Response, next: NextFunction) => {
 
     let token = req.headers.authorization!.split(' ')[1]

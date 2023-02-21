@@ -1,6 +1,5 @@
 import { QueryConfig, QueryResult } from "pg"
 import { client } from "../../database"
-import { AppError } from "../../errors"
 
 const deleteUserService = async (userId: number): Promise<void> => {
 	

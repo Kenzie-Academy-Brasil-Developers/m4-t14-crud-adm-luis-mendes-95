@@ -1,8 +1,7 @@
-import { QueryConfig, QueryResult } from "pg"
+import { QueryConfig } from "pg"
 import format from "pg-format"
 import { client } from "../../database"
-import { AppError } from "../../errors"
-import { IUserResult, IUserResultWithPassword, IUserWithoutPassword } from "../../interfaces/users.interfaces"
+import { IUserResult, IUserWithoutPassword } from "../../interfaces/users.interfaces"
 
 const patchUserService = async (userId: number, userData: string[], userKeys: string[]): Promise<IUserWithoutPassword> => {
 	

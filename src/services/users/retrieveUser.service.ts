@@ -1,7 +1,6 @@
 import { QueryConfig, QueryResult } from 'pg'
-import { IUserWithoutPassword, IUserResult } from '../../interfaces/users.interfaces'
+import { IUserWithoutPassword } from '../../interfaces/users.interfaces'
 import { client } from '../../database'
-import { AppError } from '../../errors'
 
 const retrieveUserService = async (userId: number): Promise<IUserWithoutPassword> => {
 

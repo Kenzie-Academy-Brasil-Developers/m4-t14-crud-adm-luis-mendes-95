@@ -5,19 +5,15 @@ import {
 } from "../../interfaces/users.interfaces";
 import { client } from "../../database";
 import format from "pg-format";
-import { QueryConfig, QueryResult } from "pg";
-import { AppError } from "../../errors";
 import {
   createUserSchema,
   returnUserSchemaWithoutPassword,
 } from "../../schemas/users.schemas";
-import { hash } from "bcryptjs";
 
 const createUsersService = async (
   userData: IUserRequest
 ): Promise<IUserWithoutPassword> => {
-
-   const queryString: string = format(
+  const queryString: string = format(
     `
 			  INSERT INTO
 				  users(%I)

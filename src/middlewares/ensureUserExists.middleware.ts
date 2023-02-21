@@ -2,8 +2,6 @@ import { NextFunction, Request, Response } from 'express'
 import { QueryConfig, QueryResult } from 'pg'
 import { client } from '../database'
 import { AppError } from '../errors'
-import { IUserRequest } from '../interfaces/users.interfaces'
-
 
 const ensureUserExistsMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
 

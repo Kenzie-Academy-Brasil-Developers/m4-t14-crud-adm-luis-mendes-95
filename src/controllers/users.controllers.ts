@@ -2,11 +2,11 @@ import { Request, Response } from 'express'
 import createUsersService from '../services/users/createUsers.service'
 import { IUserRequest } from '../interfaces/users.interfaces'
 import retrieveUserService from '../services/users/retrieveUser.service'
-import { AppError } from '../errors'
 import deleteUserService from '../services/users/deleteUser.service' 
 import patchUserService from '../services/users/patchUser.service'
 import listUsersService from '../services/users/listUsers.service'
 import activateUserService from '../services/users/activateUser.service'
+import retrieveUserProfileService from '../services/users/retrieveUserProfile.service'
 
 const createUsersController = async (req: Request, res: Response): Promise<Response> => {
 
@@ -30,11 +30,11 @@ const retrieveUserController = async (req: Request, res: Response): Promise<Resp
 
 const retrieveUserProfileController = async (req: Request, res: Response): Promise<Response> => {
 	
-		// const userToken: string = req.headers.authorization!.toString()
+		let token = req.headers.authorization!.split(' ')[1]
+
+		const result = retrieveUserProfileService(token)
 				
-		return res.status(200).json({
-			message: `test`
-		})
+		return res.status(200).json(result)
 	
 }
 

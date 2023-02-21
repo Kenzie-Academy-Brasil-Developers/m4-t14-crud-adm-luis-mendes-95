@@ -4,7 +4,7 @@ import { client } from '../../database'
 import { AppError } from '../../errors'
 import { compare } from "bcryptjs"
 import jwt from 'jsonwebtoken'
-import { IUserResult, IUserResultWithPassword } from '../../interfaces/users.interfaces'
+import { IUserResultWithPassword } from '../../interfaces/users.interfaces'
 import 'dotenv/config'
  
 const createLoginService = async (loginData: ILoginRequest): Promise<string> => {
